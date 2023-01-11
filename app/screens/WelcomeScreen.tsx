@@ -13,7 +13,9 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
     <View style={$container}>
       <Headline />
       <AccountCard />
-      <TransactionsCard />
+      <View style={$transactionsContainer}>
+        <TransactionsCard />
+      </View>
     </View>
   )
 })
@@ -21,4 +23,8 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
 const $container: ViewStyle = {
   flex: 1,
   backgroundColor: colors.background,
+}
+
+const $transactionsContainer: ViewStyle = {
+  marginTop: -12,
 }

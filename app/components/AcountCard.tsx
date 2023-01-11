@@ -1,7 +1,6 @@
 import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { Text } from "../components"
-import { customFontsToLoad } from "../theme"
 
 const coins = [
   { name: "EUR", backgroundColor: "#523CF8", color: "#fff" },
@@ -13,7 +12,7 @@ export const AccountCard = () => {
   return (
     <View style={$currentCard}>
       <Text tx="welcomeScreen.CurrentAccount" style={$current}></Text>
-      <Text style={$account}>1234-4567-3456-3456</Text>
+      <Text style={$account} tx="welcomeScreen.account"></Text>
       <FlatList
         horizontal={true}
         data={coins}
@@ -25,6 +24,7 @@ export const AccountCard = () => {
               borderRadius: 8,
               paddingLeft: 10,
               paddingRight: 8,
+              marginBottom: 4,
             }}
           >
             <Text style={{ color: item.color, fontSize: 12, fontFamily: "monSbold" }}>
@@ -33,8 +33,8 @@ export const AccountCard = () => {
           </View>
         )}
       />
-      <Text style={$balance}>76.451,00</Text>
-      <Text style={$balanceDescription}>Current balance</Text>
+      <Text style={$balance} tx="welcomeScreen.balanceValue"></Text>
+      <Text style={$balanceDescription} tx="welcomeScreen.balanceDescription"></Text>
     </View>
   )
 }
@@ -50,12 +50,13 @@ const $current: TextStyle = {
   color: "#16110D",
   fontSize: 22,
   fontFamily: "monBold",
+  marginTop: -4,
 }
 const $account: TextStyle = {
   color: "#16110D",
   fontSize: 12,
-  fontWeight: "bold",
   marginBottom: 10,
+  fontFamily: "monBold",
 }
 
 const $balance: TextStyle = {
@@ -67,4 +68,7 @@ const $balance: TextStyle = {
 const $balanceDescription: TextStyle = {
   color: "#16110D",
   fontSize: 15,
+  fontFamily: "monReg",
+  marginTop: -5,
+  marginBottom: -4,
 }

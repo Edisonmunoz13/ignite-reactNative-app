@@ -10,6 +10,10 @@ const en = {
     readyForLaunch: "Your app, almost ready for launch!",
     headline: "Account History",
     CurrentAccount: "Current Account",
+    balanceValue: "76.451,00",
+    balanceDescription: "Current balance",
+    account: "1234-4567-3456-3456",
+    transactionTitle: "Recents transactions",
   },
   errorScreen: {
     title: "Something went wrong!",
