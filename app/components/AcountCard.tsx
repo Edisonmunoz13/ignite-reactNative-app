@@ -11,8 +11,15 @@ const coins = [
 export const AccountCard = () => {
   return (
     <View style={$currentCard}>
-      <Text tx="welcomeScreen.CurrentAccount" style={$current}></Text>
-      <Text style={$account} tx="welcomeScreen.account"></Text>
+      <View style={$currentAccountHeader}>
+        <View>
+          <Text tx="welcomeScreen.CurrentAccount" style={$current}></Text>
+          <Text style={$account} tx="welcomeScreen.account"></Text>
+        </View>
+        <View style={$menuButtonContainer}>
+          <Image style={$menuButton} source={require("../../assets/images/menuPoints.png")} />
+        </View>
+      </View>
       <FlatList
         horizontal={true}
         data={coins}
@@ -44,6 +51,25 @@ const $currentCard: ViewStyle = {
   margin: 12,
   padding: 15,
   borderRadius: 15,
+}
+
+const $currentAccountHeader: ViewStyle = {
+  flexDirection: "row",
+  justifyContent: "space-between",
+}
+
+const $menuButtonContainer: ViewStyle = {
+  height: 40,
+  width: 40,
+  backgroundColor: "#F76654",
+  alignItems: "center",
+  paddingTop: 18,
+  borderRadius: 20,
+}
+
+const $menuButton: ImageStyle = {
+  width: 22,
+  height: 5,
 }
 
 const $current: TextStyle = {

@@ -66,6 +66,7 @@ const $transactionValue: TextStyle = {
   color: "#F76654",
   fontSize: 12,
   fontFamily: "monBold",
+  marginLeft: -22,
 }
 
 const $transactionCoin: TextStyle = {
@@ -76,13 +77,13 @@ const $transactionCoin: TextStyle = {
 }
 
 const $transactioInfo: ViewStyle = {
-  marginLeft: -40,
+  marginLeft: -55,
 }
 
 const $transactioItem: ViewStyle = {
   flexDirection: "row",
   justifyContent: "space-between",
-  padding: 12,
+  padding: 10,
 }
 
 const $transactionIcon: ImageStyle = {
