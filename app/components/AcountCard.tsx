@@ -68,8 +68,8 @@ const $menuButtonContainer: ViewStyle = {
 }
 
 const $menuButton: ImageStyle = {
-  width: 22,
-  height: 5,
+  width: 18,
+  height: 4,
 }
 
 const $current: TextStyle = {
@@ -88,7 +88,7 @@ const $account: TextStyle = {
 const $balance: TextStyle = {
   color: "#16110D",
   fontSize: 34,
-  paddingTop: 30,
+  paddingTop: 25,
   fontFamily: "monBold",
 }
 const $balanceDescription: TextStyle = {

@@ -13,7 +13,7 @@ const en = {
     balanceValue: "76.451,00",
     balanceDescription: "Current balance",
     account: "1234-4567-3456-3456",
-    transactionTitle: "Recents transactions",
+    transactionTitle: "Recent transactions",
   },
   errorScreen: {
     title: "Something went wrong!",
