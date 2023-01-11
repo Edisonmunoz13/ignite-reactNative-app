@@ -86,8 +86,8 @@ const $transactionMenuIcon: ImageStyle = {
 const $transactionsTitle: TextStyle = {
   color: "#16110D",
   fontSize: 17,
-  fontFamily: "monSbold",
-  paddingBottom: 5,
+  fontFamily: "monBold",
+  paddingBottom: 8,
   marginLeft: 8,
   marginTop: 5,
 }

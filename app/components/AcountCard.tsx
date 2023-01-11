@@ -20,26 +20,28 @@ export const AccountCard = () => {
           <Image style={$menuButton} source={require("../../assets/images/menuPoints.png")} />
         </View>
       </View>
-      <FlatList
-        horizontal={true}
-        data={coins}
-        renderItem={({ item }) => (
-          <View
-            style={{
-              backgroundColor: item.backgroundColor,
-              height: 25,
-              borderRadius: 8,
-              paddingLeft: 10,
-              paddingRight: 8,
-              marginBottom: 4,
-            }}
-          >
-            <Text style={{ color: item.color, fontSize: 12, fontFamily: "monSbold" }}>
-              {item.name}
-            </Text>
-          </View>
-        )}
-      />
+      <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row" }}>
+          {coins.map((item) => (
+            <View
+              style={{
+                width: 45,
+                backgroundColor: item.backgroundColor,
+                height: 25,
+                borderRadius: 8,
+                paddingLeft: 10,
+                paddingRight: 8,
+                marginBottom: 4,
+                marginRight: 2,
+              }}
+            >
+              <Text style={{ color: item.color, fontFamily: "monBold", fontSize: 12 }}>
+                {item.name}
+              </Text>
+            </View>
+          ))}
+        </View>
+      </View>
       <Text style={$balance} tx="welcomeScreen.balanceValue"></Text>
       <Text style={$balanceDescription} tx="welcomeScreen.balanceDescription"></Text>
     </View>
@@ -51,6 +53,7 @@ const $currentCard: ViewStyle = {
   margin: 12,
   padding: 15,
   borderRadius: 15,
+  width: 350,
 }
 
 const $currentAccountHeader: ViewStyle = {

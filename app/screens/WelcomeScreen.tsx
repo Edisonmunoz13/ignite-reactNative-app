@@ -5,6 +5,7 @@ import { Text } from "../components"
 import { AccountCard } from "../components/AcountCard"
 import { Headline } from "../components/Headline"
 import { NavigationBar } from "../components/NavigationBar"
+import { SliderAccounts } from "../components/SliderAccounts"
 import { TransactionsCard } from "../components/TransactionsCard"
 import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
@@ -13,7 +14,9 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
   return (
     <View style={$container}>
       <Headline />
-      <AccountCard />
+      <View>
+        <SliderAccounts />
+      </View>
       <View style={$transactionsContainer}>
         <TransactionsCard />
       </View>
