@@ -10,7 +10,20 @@ import {
   SpaceGrotesk_700Bold as spaceGroteskBold,
 } from "@expo-google-fonts/space-grotesk"
 
+import {
+  Montserrat_300Light as monLigth,
+  Montserrat_400Regular as monReg,
+  Montserrat_500Medium as monMed,
+  Montserrat_600SemiBold as monSbold,
+  Montserrat_700Bold as monBold,
+} from "@expo-google-fonts/montserrat"
+
 export const customFontsToLoad = {
+  monLigth,
+  monReg,
+  monMed,
+  monSbold,
+  monBold,
   spaceGroteskLight,
   spaceGroteskRegular,
   spaceGroteskMedium,
@@ -19,6 +32,13 @@ export const customFontsToLoad = {
 }
 
 const fonts = {
+  Montserrat: {
+    light: "monLigth",
+    normal: "monReg",
+    medium: "monMed",
+    semiBold: "monSbold",
+    bold: "monBold",
+  },
   spaceGrotesk: {
     // Cross-platform Google font.
     light: "spaceGroteskLight",
@@ -59,11 +79,11 @@ export const typography = {
   /**
    * The primary font. Used in most places.
    */
-  primary: fonts.spaceGrotesk,
+  primary: fonts.Montserrat,
   /**
    * An alternate font used for perhaps titles and stuff.
    */
-  secondary: Platform.select({ ios: fonts.helveticaNeue, android: fonts.sansSerif }),
+  secondary: Platform.select({ ios: fonts.helveticaNeue, android: fonts.Montserrat }),
   /**
    * Lets get fancy with a monospace font!
    */

@@ -22,11 +22,11 @@ export const TransactionsCard = () => {
             <Image style={$transactionIcon} source={require("../../assets/images/taxilogo.png")} />
             <View style={{ borderBottomColor: "#DCDCDC" }}>
               <Text style={$transactionDescription}>{item.name}</Text>
-              <Text>{item.date}</Text>
+              <Text style={$transactionDate}>{item.date}</Text>
             </View>
             <View>
-              <Text>{item.value}</Text>
-              <Text>{item.coin}</Text>
+              <Text style={$transactionValue}>{item.value}</Text>
+              <Text style={$transactionCoin}>{item.coin}</Text>
             </View>
           </View>
         )}
@@ -51,6 +51,24 @@ const $current: TextStyle = {
 const $transactionDescription: TextStyle = {
   color: "#16110D",
   fontSize: 12,
+  fontWeight: "bold",
+}
+
+const $transactionDate: TextStyle = {
+  color: "#C4C4C4",
+  fontSize: 11,
+  fontWeight: "bold",
+}
+
+const $transactionValue: TextStyle = {
+  color: "#F76654",
+  fontSize: 12,
+  fontWeight: "bold",
+}
+
+const $transactionCoin: TextStyle = {
+  color: "#C4C4C4",
+  fontSize: 11,
   fontWeight: "bold",
 }
 
