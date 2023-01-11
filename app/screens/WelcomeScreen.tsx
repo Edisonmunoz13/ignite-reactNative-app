@@ -4,6 +4,7 @@ import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-n
 import { Text } from "../components"
 import { AccountCard } from "../components/AcountCard"
 import { Headline } from "../components/Headline"
+import { NavigationBar } from "../components/NavigationBar"
 import { TransactionsCard } from "../components/TransactionsCard"
 import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
@@ -13,7 +14,10 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
     <View style={$container}>
       <Headline />
       <AccountCard />
-      <TransactionsCard />
+      <View style={$transactionsContainer}>
+        <TransactionsCard />
+      </View>
+      <NavigationBar />
     </View>
   )
 })
@@ -21,4 +25,8 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
 const $container: ViewStyle = {
   flex: 1,
   backgroundColor: colors.background,
+}
+
+const $transactionsContainer: ViewStyle = {
+  marginTop: -12,
 }

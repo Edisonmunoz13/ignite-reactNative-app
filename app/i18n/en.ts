@@ -9,6 +9,11 @@ const en = {
       "psst  — This probably isn't what your app looks like. (Unless your designer handed you these screens, and in that case, ship it!)",
     readyForLaunch: "Your app, almost ready for launch!",
     headline: "Account History",
+    CurrentAccount: "Current Account",
+    balanceValue: "76.451,00",
+    balanceDescription: "Current balance",
+    account: "1234-4567-3456-3456",
+    transactionTitle: "Recent transactions",
   },
   errorScreen: {
     title: "Something went wrong!",
