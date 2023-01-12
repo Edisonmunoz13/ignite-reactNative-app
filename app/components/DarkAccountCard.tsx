@@ -5,11 +5,11 @@ import { colors } from "../theme"
 
 const coins = [
   { name: "EUR", backgroundColor: "#523CF8", color: "#fff" },
-  { name: "USD", backgroundColor: "#fff", color: "#16110D" },
-  { name: "GBP", backgroundColor: "#fff", color: "#16110D" },
+  { name: "USD", backgroundColor: "#2F2E33", color: "#646464" },
+  { name: "GBP", backgroundColor: "#2F2E33", color: "#646464" },
 ]
 
-export const AccountCard = () => {
+export const DarkAccountCard = () => {
   return (
     <View style={$currentCard}>
       <View style={$currentAccountHeader}>
@@ -50,7 +50,7 @@ export const AccountCard = () => {
 }
 
 const $currentCard: ViewStyle = {
-  backgroundColor: colors.cards,
+  backgroundColor: colors.grey,
   margin: 12,
   padding: 15,
   borderRadius: 15,
@@ -77,26 +77,26 @@ const $menuButton: ImageStyle = {
 }
 
 const $current: TextStyle = {
-  color: colors.text,
+  color: colors.white,
   fontSize: 22,
   fontFamily: "monBold",
   marginTop: -4,
 }
 const $account: TextStyle = {
-  color: colors.text,
+  color: colors.darkText,
   fontSize: 12,
   marginBottom: 10,
   fontFamily: "monBold",
 }
 
 const $balance: TextStyle = {
-  color: colors.text,
+  color: colors.white,
   fontSize: 34,
   paddingTop: 25,
   fontFamily: "monBold",
 }
 const $balanceDescription: TextStyle = {
-  color: colors.text,
+  color: colors.white,
   fontSize: 15,
   fontFamily: "monReg",
   marginTop: -5,

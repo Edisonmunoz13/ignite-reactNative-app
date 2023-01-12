@@ -11,7 +11,7 @@ const transactions = [
   { id: 5, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
 ]
 
-export const TransactionsCard = () => {
+export const DarkTransactionsCard = () => {
   return (
     <View style={$currentCard}>
       <View style={$transactionsHeader}>
@@ -51,13 +51,13 @@ export const TransactionsCard = () => {
 }
 const $separator: ViewStyle = {
   borderBottomWidth: 1,
-  borderBottomColor: colors.separator,
+  borderBottomColor: colors.darkText,
   marginLeft: 60,
   marginRight: 12,
 }
 
 const $currentCard: ViewStyle = {
-  backgroundColor: colors.cards,
+  backgroundColor: colors.grey,
   margin: 12,
   padding: 15,
   borderRadius: 15,
@@ -85,7 +85,7 @@ const $transactionMenuIcon: ImageStyle = {
 }
 
 const $transactionsTitle: TextStyle = {
-  color: colors.text,
+  color: colors.white,
   fontSize: 17,
   fontFamily: "monBold",
   paddingBottom: 8,
@@ -94,27 +94,27 @@ const $transactionsTitle: TextStyle = {
 }
 
 const $transactionDescription: TextStyle = {
-  color: colors.text,
+  color: colors.white,
   fontSize: 12,
   fontFamily: "monBold",
 }
 
 const $transactionDate: TextStyle = {
-  color: colors.text2,
+  color: colors.darkText,
   fontSize: 11,
   fontFamily: "monSbold",
   marginTop: -10,
 }
 
 const $transactionValue: TextStyle = {
-  color: colors.icons,
+  color: colors.darkRed,
   fontSize: 12,
   fontFamily: "monBold",
   marginLeft: -22,
 }
 
 const $transactionCoin: TextStyle = {
-  color: colors.text2,
+  color: colors.darkText,
   fontSize: 11,
   fontFamily: "monBold",
   marginTop: -10,

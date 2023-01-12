@@ -5,15 +5,12 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import { Text } from "../components"
 import { colors, spacing } from "../theme"
 
-export const Headline = () => {
+export const DarkHeadline = () => {
   return (
     <View style={$topContainer}>
       <View style={$emptySpace}></View>
-
       <Text style={$headline} tx="welcomeScreen.headline" preset="subheading"></Text>
-      <TouchableOpacity onPress={() => console.log("Button pressed!")}>
-        <Image style={$configButton} source={require("../../assets/images/config.png")} />
-      </TouchableOpacity>
+      <Image style={$configButton} source={require("../../assets/images/config.png")} />
     </View>
   )
 }
