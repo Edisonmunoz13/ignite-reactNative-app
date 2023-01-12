@@ -51,7 +51,7 @@ export const colors = {
   /**
    * The default text color in many components.
    */
-  text: palette.neutral800,
+  text: "#16110D",
   /**
    * Secondary text information.
    */
@@ -60,6 +60,17 @@ export const colors = {
    * The default color of the screen background.
    */
   background: "#523CF8",
+
+  cards: "#FEFEFE",
+
+  icons: "#F76654",
+
+  white: "#fff",
+
+  separator: "#DCDCDC",
+
+  text2: "#C4C4C4",
+
   /**
    * The default border color.
    */
@@ -71,7 +82,7 @@ export const colors = {
   /**
    * A subtle color used for lines.
    */
-  separator: palette.neutral300,
+
   /**
    * Error messages.
    */

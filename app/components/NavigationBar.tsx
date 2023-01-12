@@ -16,11 +16,13 @@ export const NavigationBar = () => {
 const $navigationContainer: ViewStyle = {
   backgroundColor: "#FEFEFE",
   width: "100%",
-  height: 100,
+  height: 150,
   borderRadius: 30,
   flexDirection: "row",
   justifyContent: "space-between",
   padding: 30,
+  position: "absolute",
+  bottom: -62,
 }
 
 const $buttonIcons: ImageStyle = {

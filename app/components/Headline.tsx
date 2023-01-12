@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite"
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
+import { TouchableOpacity } from "react-native-gesture-handler"
 import { Text } from "../components"
 import { colors, spacing } from "../theme"
 
@@ -25,7 +26,7 @@ const $emptySpace: ViewStyle = {
 }
 
 const $headline: TextStyle = {
-  color: "#fff",
+  color: colors.white,
   marginTop: 45,
   marginBottom: 40,
 }

@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { Text } from "../components"
+import { colors } from "../theme"
 
 const transactions = [
   { id: 1, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
@@ -50,20 +51,20 @@ export const TransactionsCard = () => {
 }
 const $separator: ViewStyle = {
   borderBottomWidth: 1,
-  borderBottomColor: "#DCDCDC",
+  borderBottomColor: colors.separator,
   marginLeft: 60,
   marginRight: 12,
 }
 
 const $currentCard: ViewStyle = {
-  backgroundColor: "#FEFEFE",
+  backgroundColor: colors.cards,
   margin: 12,
   padding: 15,
   borderRadius: 15,
 }
 
 const $iconContainer: ViewStyle = {
-  backgroundColor: "#523CF8",
+  backgroundColor: colors.background,
   height: 30,
   width: 30,
   borderRadius: 15,
@@ -84,7 +85,7 @@ const $transactionMenuIcon: ImageStyle = {
 }
 
 const $transactionsTitle: TextStyle = {
-  color: "#16110D",
+  color: colors.text,
   fontSize: 17,
   fontFamily: "monBold",
   paddingBottom: 8,
@@ -93,27 +94,27 @@ const $transactionsTitle: TextStyle = {
 }
 
 const $transactionDescription: TextStyle = {
-  color: "#16110D",
+  color: colors.text,
   fontSize: 12,
   fontFamily: "monBold",
 }
 
 const $transactionDate: TextStyle = {
-  color: "#C4C4C4",
+  color: colors.text2,
   fontSize: 11,
   fontFamily: "monSbold",
   marginTop: -10,
 }
 
 const $transactionValue: TextStyle = {
-  color: "#F76654",
+  color: colors.icons,
   fontSize: 12,
   fontFamily: "monBold",
   marginLeft: -22,
 }
 
 const $transactionCoin: TextStyle = {
-  color: "#C4C4C4",
+  color: colors.text2,
   fontSize: 11,
   fontFamily: "monBold",
   marginTop: -10,
@@ -126,7 +127,7 @@ const $transactioInfo: ViewStyle = {
 const $transactioItem: ViewStyle = {
   flexDirection: "row",
   justifyContent: "space-between",
-  padding: 9,
+  padding: 8,
 }
 
 const $transactionIcon: ImageStyle = {

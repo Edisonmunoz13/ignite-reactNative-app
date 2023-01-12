@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { Text } from "../components"
+import { colors } from "../theme"
 
 const coins = [
   { name: "EUR", backgroundColor: "#523CF8", color: "#fff" },
@@ -49,7 +50,7 @@ export const AccountCard = () => {
 }
 
 const $currentCard: ViewStyle = {
-  backgroundColor: "#FEFEFE",
+  backgroundColor: colors.cards,
   margin: 12,
   padding: 15,
   borderRadius: 15,
@@ -64,7 +65,7 @@ const $currentAccountHeader: ViewStyle = {
 const $menuButtonContainer: ViewStyle = {
   height: 40,
   width: 40,
-  backgroundColor: "#F76654",
+  backgroundColor: colors.icons,
   alignItems: "center",
   paddingTop: 18,
   borderRadius: 20,
@@ -76,26 +77,26 @@ const $menuButton: ImageStyle = {
 }
 
 const $current: TextStyle = {
-  color: "#16110D",
+  color: colors.text,
   fontSize: 22,
   fontFamily: "monBold",
   marginTop: -4,
 }
 const $account: TextStyle = {
-  color: "#16110D",
+  color: colors.text,
   fontSize: 12,
   marginBottom: 10,
   fontFamily: "monBold",
 }
 
 const $balance: TextStyle = {
-  color: "#16110D",
+  color: colors.text,
   fontSize: 34,
   paddingTop: 25,
   fontFamily: "monBold",
 }
 const $balanceDescription: TextStyle = {
-  color: "#16110D",
+  color: colors.text,
   fontSize: 15,
   fontFamily: "monReg",
   marginTop: -5,

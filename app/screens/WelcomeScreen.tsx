@@ -1,5 +1,6 @@
 import { observer } from "mobx-react-lite"
-import React, { FC } from "react"
+import { boolean } from "mobx-state-tree/dist/internal"
+import React, { FC, useState } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { Text } from "../components"
 import { AccountCard } from "../components/AcountCard"
@@ -11,6 +12,8 @@ import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 
 export const WelcomeScreen: FC = observer(function WelcomeScreen() {
+  const [dark, setDark] = useState<boolean>(false)
+
   return (
     <View style={$container}>
       <Headline />
