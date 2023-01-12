@@ -2,14 +2,9 @@ import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { Text } from "../components"
 import { colors } from "../theme"
+import data from "../data/transactionsData"
 
-const transactions = [
-  { id: 1, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
-  { id: 2, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
-  { id: 3, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
-  { id: 4, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
-  { id: 5, name: `"Golub" Taxi Transportation`, date: "20th May, 18:39", value: -345, coin: "EUR" },
-]
+const transactionsData = data
 
 export const TransactionsCard = () => {
   return (
@@ -25,24 +20,41 @@ export const TransactionsCard = () => {
       </View>
 
       <FlatList
-        data={transactions}
+        data={transactionsData}
         renderItem={({ item }) => (
-          <View>
+          <View key={item.id}>
             <View style={$transactioItem}>
-              <Image
-                style={$transactionIcon}
-                source={require("../../assets/images/taxilogo.png")}
-              />
+              <View
+                style={{
+                  width: 30,
+                  height: 30,
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  backgroundColor: colors.icons,
+                  borderRadius: 8,
+                  marginTop: 5,
+                }}
+              >
+                <Image style={$transactionIcon} source={item.icon} />
+              </View>
               <View style={$transactioInfo}>
-                <Text style={$transactionDescription}>{item.name}</Text>
+                <Text style={$transactionDescription}>{item.title}</Text>
                 <Text style={$transactionDate}>{item.date}</Text>
               </View>
-              <View>
-                <Text style={$transactionValue}>{item.value.toFixed(2)}</Text>
-                <Text style={$transactionCoin}>{item.coin}</Text>
+              <View style={{ alignItems: "flex-end", width: 70 }}>
+                <Text
+                  style={{
+                    color: item.type ? "#523CF8" : "#F76654",
+                    fontSize: 12,
+                    fontFamily: "monBold",
+                  }}
+                >
+                  {item.amount}
+                </Text>
+                <Text style={$transactionCoin}>{item.currency}</Text>
               </View>
             </View>
-            <View style={item.id !== transactions.length && $separator}></View>
+            <View style={item.id !== transactionsData.length && $separator}></View>
           </View>
         )}
       />
@@ -106,22 +118,18 @@ const $transactionDate: TextStyle = {
   marginTop: -10,
 }
 
-const $transactionValue: TextStyle = {
-  color: colors.icons,
-  fontSize: 12,
-  fontFamily: "monBold",
-  marginLeft: -22,
-}
-
 const $transactionCoin: TextStyle = {
   color: colors.text2,
   fontSize: 11,
   fontFamily: "monBold",
+
   marginTop: -10,
 }
 
 const $transactioInfo: ViewStyle = {
-  marginLeft: -55,
+  width: 180,
+  alignItems: "flex-start",
+  marginRight: 12,
 }
 
 const $transactioItem: ViewStyle = {
@@ -131,9 +139,8 @@ const $transactioItem: ViewStyle = {
 }
 
 const $transactionIcon: ImageStyle = {
-  width: 30,
-  height: 30,
-  padding: 10,
-  borderRadius: 8,
-  marginTop: 4,
+  width: 16,
+  height: 15,
+  marginTop: 7.5,
+  backgroundColor: colors.icons,
 }
