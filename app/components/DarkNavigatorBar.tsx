@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { colors } from "../theme"
 
-export const NavigationBar = () => {
+export const DarkNavigationBar = () => {
   return (
     <View style={$navigationContainer}>
       <Image style={$buttonIcons} source={require("../../assets/images/button1.png")}></Image>
@@ -14,7 +14,7 @@ export const NavigationBar = () => {
 }
 
 const $navigationContainer: ViewStyle = {
-  backgroundColor: colors.white,
+  backgroundColor: colors.grey,
   width: "100%",
   height: 150,
   borderRadius: 30,

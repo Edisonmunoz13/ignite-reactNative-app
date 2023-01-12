@@ -1,38 +1,21 @@
 import { observer } from "mobx-react-lite"
-import { boolean } from "mobx-state-tree/dist/internal"
 import React, { FC, useState } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
-import { Text } from "../components"
-import { AccountCard } from "../components/AcountCard"
-import { Headline } from "../components/Headline"
-import { NavigationBar } from "../components/NavigationBar"
-import { SliderAccounts } from "../components/SliderAccounts"
-import { TransactionsCard } from "../components/TransactionsCard"
-import { colors, spacing } from "../theme"
-import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
+import { DarkScreen } from "./DarkScreen"
+import { LigthScreen } from "./LigthScreen"
 
 export const WelcomeScreen: FC = observer(function WelcomeScreen() {
-  const [dark, setDark] = useState<boolean>(false)
+  const [dark, setDark] = useState<boolean>(true)
 
-  return (
-    <View style={$container}>
-      <Headline />
-      <View>
-        <SliderAccounts />
-      </View>
-      <View style={$transactionsContainer}>
-        <TransactionsCard />
-      </View>
-      <NavigationBar />
-    </View>
-  )
+  function handlePress() {
+    setDark(!dark)
+  }
+
+  setTimeout(() => {
+    setDark(true)
+  }, 5000)
+
+  if (dark) {
+    return <LigthScreen onPress={handlePress} />
+  }
+  return <DarkScreen />
 })
-
-const $container: ViewStyle = {
-  flex: 1,
-  backgroundColor: colors.background,
-}
-
-const $transactionsContainer: ViewStyle = {
-  marginTop: -12,
-}

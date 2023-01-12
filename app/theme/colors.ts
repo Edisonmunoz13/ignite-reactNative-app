@@ -67,9 +67,15 @@ export const colors = {
 
   white: "#fff",
 
+  grey: "#2F2E33",
+
   separator: "#DCDCDC",
 
   text2: "#C4C4C4",
+
+  darkText: "#646464",
+
+  darkRed: "#EE4F31",
 
   /**
    * The default border color.
