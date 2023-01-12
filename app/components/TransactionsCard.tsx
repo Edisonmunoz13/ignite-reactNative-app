@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
 import { Text } from "../components"
 import { colors } from "../theme"
-import data from "../data/transactionsData.json"
+import data from "../data/transactionsData"
 
 const transactionsData = data
 
@@ -22,7 +22,7 @@ export const TransactionsCard = () => {
       <FlatList
         data={transactionsData}
         renderItem={({ item }) => (
-          <View>
+          <View key={item.id}>
             <View style={$transactioItem}>
               <View
                 style={{
@@ -35,10 +35,7 @@ export const TransactionsCard = () => {
                   marginTop: 5,
                 }}
               >
-                <Image
-                  style={$transactionIcon}
-                  source={require(`../../assets/transactionsIcons/${1}.png`)}
-                />
+                <Image style={$transactionIcon} source={item.icon} />
               </View>
               <View style={$transactioInfo}>
                 <Text style={$transactionDescription}>{item.title}</Text>
