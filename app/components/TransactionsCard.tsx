@@ -18,7 +18,6 @@ export const TransactionsCard = () => {
           />
         </View>
       </View>
-
       <FlatList
         data={transactionsData}
         renderItem={({ item }) => (
