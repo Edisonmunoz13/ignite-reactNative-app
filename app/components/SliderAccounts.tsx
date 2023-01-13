@@ -43,7 +43,7 @@ export const SliderAccounts = () => {
       </View>
       <FlatList
         showsHorizontalScrollIndicator={false}
-        snapToInterval={365}
+        snapToInterval={366}
         horizontal={true}
         data={data}
         renderItem={({ item }) => <View>{item.component}</View>}

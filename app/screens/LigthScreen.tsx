@@ -9,6 +9,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native"
+import { ScrollView } from "react-native-gesture-handler"
 import { Headline } from "../components/Headline"
 import { NavigationBar } from "../components/NavigationBar"
 import { SliderAccounts } from "../components/SliderAccounts"
@@ -18,15 +19,17 @@ import { colors, spacing } from "../theme"
 export const LigthScreen = ({ onPress }) => {
   return (
     <View style={$container}>
-      <TouchableOpacity onPress={onPress}>
-        <Headline />
-      </TouchableOpacity>
-      <View>
-        <SliderAccounts />
-      </View>
-      <View style={$transactionsContainer}>
-        <TransactionsCard />
-      </View>
+      <ScrollView>
+        <TouchableOpacity onPress={onPress}>
+          <Headline />
+        </TouchableOpacity>
+        <View>
+          <SliderAccounts />
+        </View>
+        <View style={$transactionsContainer}>
+          <TransactionsCard />
+        </View>
+      </ScrollView>
       <NavigationBar />
     </View>
   )

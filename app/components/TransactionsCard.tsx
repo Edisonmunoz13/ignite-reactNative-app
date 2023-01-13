@@ -18,6 +18,7 @@ export const TransactionsCard = () => {
           />
         </View>
       </View>
+
       <FlatList
         data={transactionsData}
         renderItem={({ item }) => (
@@ -138,7 +139,7 @@ const $transactioItem: ViewStyle = {
 }
 
 const $transactionIcon: ImageStyle = {
-  width: 16,
+  width: 15,
   height: 15,
   marginTop: 7.5,
   backgroundColor: colors.icons,
