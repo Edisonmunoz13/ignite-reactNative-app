@@ -54,6 +54,7 @@ const $currentCard: ViewStyle = {
   margin: 12,
   padding: 15,
   borderRadius: 15,
+  marginRight: 12,
   width: 350,
 }
 

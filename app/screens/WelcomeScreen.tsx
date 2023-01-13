@@ -12,7 +12,7 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
 
   setTimeout(() => {
     setDark(true)
-  }, 30000)
+  }, 6000)
 
   if (dark) {
     return <LigthScreen onPress={handlePress} />
