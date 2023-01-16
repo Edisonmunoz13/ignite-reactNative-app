@@ -1,10 +1,21 @@
 import React, { FC } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
+import {
+  Image,
+  ImageStyle,
+  TextStyle,
+  View,
+  ViewStyle,
+  FlatList,
+  useColorScheme,
+} from "react-native"
 import { colors } from "../theme"
 
 export const NavigationBar = () => {
+  const theme = useColorScheme()
   return (
-    <View style={$navigationContainer}>
+    <View
+      style={[$navigationContainer, { backgroundColor: colors[theme].white, borderRadius: 30 }]}
+    >
       <Image style={$buttonIcons} source={require("../../assets/images/button1.png")}></Image>
       <Image style={$buttonIcons} source={require("../../assets/images/button2.png")}></Image>
       <Image style={$buttonIcons} source={require("../../assets/images/button3.png")}></Image>
@@ -14,10 +25,9 @@ export const NavigationBar = () => {
 }
 
 const $navigationContainer: ViewStyle = {
-  backgroundColor: colors.white,
   width: "100%",
   height: 150,
-  borderRadius: 30,
+
   flexDirection: "row",
   justifyContent: "space-between",
   padding: 30,

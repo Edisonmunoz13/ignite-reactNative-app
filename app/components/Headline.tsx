@@ -1,16 +1,29 @@
 import { observer } from "mobx-react-lite"
 import React, { FC, useState } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
+import {
+  Image,
+  ImageStyle,
+  TextStyle,
+  View,
+  ViewStyle,
+  FlatList,
+  useColorScheme,
+} from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { Text } from "../components"
 import { colors, spacing } from "../theme"
 
 export const Headline = () => {
+  const theme = useColorScheme()
   return (
     <View style={$topContainer}>
       <View style={$emptySpace}></View>
 
-      <Text style={$headline} tx="welcomeScreen.headline" preset="subheading"></Text>
+      <Text
+        style={[$headline, { color: colors[theme].white }]}
+        tx="welcomeScreen.headline"
+        preset="subheading"
+      ></Text>
       <TouchableOpacity onPress={() => console.log("Button pressed!")}>
         <Image style={$configButton} source={require("../../assets/images/config.png")} />
       </TouchableOpacity>
@@ -29,7 +42,6 @@ const $emptySpace: ViewStyle = {
 }
 
 const $headline: TextStyle = {
-  color: colors.white,
   marginTop: 45,
   marginBottom: 40,
 }

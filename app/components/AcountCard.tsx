@@ -1,5 +1,13 @@
 import React, { FC } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
+import {
+  Image,
+  ImageStyle,
+  TextStyle,
+  View,
+  ViewStyle,
+  FlatList,
+  useColorScheme,
+} from "react-native"
 import { Text } from "../components"
 import { colors } from "../theme"
 
@@ -10,14 +18,20 @@ const coins = [
 ]
 
 export const AccountCard = () => {
+  const theme = useColorScheme()
   return (
-    <View style={$currentCard}>
+    <View style={[$currentCard, { backgroundColor: colors[theme].cards }]}>
       <View style={$currentAccountHeader}>
         <View>
-          <Text tx="welcomeScreen.CurrentAccount" style={$current}></Text>
-          <Text style={$account} tx="welcomeScreen.account"></Text>
+          <Text
+            tx="welcomeScreen.CurrentAccount"
+            style={[$current, { color: colors[theme].text }]}
+          ></Text>
+          <Text style={[$account, { color: colors[theme].text }]} tx="welcomeScreen.account"></Text>
         </View>
-        <View style={$menuButtonContainer}>
+        <View
+          style={[$menuButtonContainer, { backgroundColor: colors[theme].icons, borderRadius: 20 }]}
+        >
           <Image style={$menuButton} source={require("../../assets/images/menuPoints.png")} />
         </View>
       </View>
@@ -43,14 +57,19 @@ export const AccountCard = () => {
           ))}
         </View>
       </View>
-      <Text style={$balance} tx="welcomeScreen.balanceValue"></Text>
-      <Text style={$balanceDescription} tx="welcomeScreen.balanceDescription"></Text>
+      <Text
+        style={[$balance, { color: colors[theme].text }]}
+        tx="welcomeScreen.balanceValue"
+      ></Text>
+      <Text
+        style={[$balanceDescription, { color: colors[theme].text }]}
+        tx="welcomeScreen.balanceDescription"
+      ></Text>
     </View>
   )
 }
 
 const $currentCard: ViewStyle = {
-  backgroundColor: colors.cards,
   margin: 12,
   padding: 15,
   borderRadius: 15,
@@ -66,38 +85,33 @@ const $currentAccountHeader: ViewStyle = {
 const $menuButtonContainer: ViewStyle = {
   height: 40,
   width: 40,
-  backgroundColor: colors.icons,
   alignItems: "center",
   paddingTop: 18,
-  borderRadius: 20,
 }
 
 const $menuButton: ImageStyle = {
   width: 18,
   height: 4,
+  borderRadius: 20,
 }
 
 const $current: TextStyle = {
-  color: colors.text,
   fontSize: 22,
   fontFamily: "monBold",
   marginTop: -4,
 }
 const $account: TextStyle = {
-  color: colors.text,
   fontSize: 12,
   marginBottom: 10,
   fontFamily: "monBold",
 }
 
 const $balance: TextStyle = {
-  color: colors.text,
   fontSize: 34,
   paddingTop: 25,
   fontFamily: "monBold",
 }
 const $balanceDescription: TextStyle = {
-  color: colors.text,
   fontSize: 15,
   fontFamily: "monReg",
   marginTop: -5,

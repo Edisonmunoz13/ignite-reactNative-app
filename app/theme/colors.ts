@@ -51,7 +51,7 @@ export const colors = {
   /**
    * The default text color in many components.
    */
-  text: "#16110D",
+
   /**
    * Secondary text information.
    */
@@ -59,23 +59,38 @@ export const colors = {
   /**
    * The default color of the screen background.
    */
-  background: "#523CF8",
 
-  cards: "#FEFEFE",
+  light: {
+    background: "#523CF8",
 
-  icons: "#F76654",
+    cards: "#FEFEFE",
 
-  white: "#fff",
+    icons: "#F76654",
 
-  grey: "#2F2E33",
+    white: "#fff",
 
-  separator: "#DCDCDC",
+    text: "#16110D",
 
-  text2: "#C4C4C4",
+    text2: "#C4C4C4",
 
-  darkText: "#646464",
+    separator: "#DCDCDC",
+  },
 
-  darkRed: "#EE4F31",
+  dark: {
+    background: "#16110D",
+
+    cards: "#2F2E33",
+
+    icons: "#EE4F31",
+
+    white: "#2F2E33",
+
+    text: "#FEFEFE",
+
+    text2: "#646464",
+
+    separator: "#646464",
+  },
 
   /**
    * The default border color.
