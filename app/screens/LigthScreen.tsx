@@ -8,6 +8,7 @@ import {
   ViewStyle,
   FlatList,
   TouchableOpacity,
+  useColorScheme,
 } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { Headline } from "../components/Headline"
@@ -17,8 +18,9 @@ import { TransactionsCard } from "../components/TransactionsCard"
 import { colors, spacing } from "../theme"
 
 export const LigthScreen = ({ onPress }) => {
+  const theme = useColorScheme()
   return (
-    <View style={$container}>
+    <View style={[$container, { backgroundColor: colors[theme].background }]}>
       <ScrollView>
         <TouchableOpacity onPress={onPress}>
           <Headline />
@@ -37,7 +39,6 @@ export const LigthScreen = ({ onPress }) => {
 
 const $container: ViewStyle = {
   flex: 1,
-  backgroundColor: colors.background,
 }
 
 const $transactionsContainer: ViewStyle = {

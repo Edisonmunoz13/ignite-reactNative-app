@@ -1,5 +1,13 @@
 import React, { FC } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, FlatList } from "react-native"
+import {
+  Image,
+  ImageStyle,
+  TextStyle,
+  View,
+  ViewStyle,
+  FlatList,
+  useColorScheme,
+} from "react-native"
 import { Text } from "../components"
 import { colors } from "../theme"
 import data from "../data/transactionsData"
@@ -7,11 +15,16 @@ import data from "../data/transactionsData"
 const transactionsData = data
 
 export const TransactionsCard = () => {
+  const theme = useColorScheme()
+
   return (
-    <View style={$currentCard}>
+    <View style={[$currentCard, { backgroundColor: colors[theme].cards }]}>
       <View style={$transactionsHeader}>
-        <Text style={$transactionsTitle} tx="welcomeScreen.transactionTitle"></Text>
-        <View style={$iconContainer}>
+        <Text
+          style={[$transactionsTitle, { color: colors[theme].text }]}
+          tx="welcomeScreen.transactionTitle"
+        ></Text>
+        <View style={[$iconContainer, { backgroundColor: colors[theme].background }]}>
           <Image
             style={$transactionMenuIcon}
             source={require("../../assets/images/transactionsMenuIcon.png")}
@@ -30,16 +43,21 @@ export const TransactionsCard = () => {
                   height: 30,
                   flexDirection: "row",
                   justifyContent: "center",
-                  backgroundColor: colors.icons,
+                  backgroundColor: colors[theme].icons,
                   borderRadius: 8,
                   marginTop: 5,
                 }}
               >
-                <Image style={$transactionIcon} source={item.icon} />
+                <Image
+                  style={[$transactionIcon, { backgroundColor: colors[theme].icons }]}
+                  source={item.icon}
+                />
               </View>
               <View style={$transactioInfo}>
-                <Text style={$transactionDescription}>{item.title}</Text>
-                <Text style={$transactionDate}>{item.date}</Text>
+                <Text style={[$transactionDescription, { color: colors[theme].text }]}>
+                  {item.title}
+                </Text>
+                <Text style={[$transactionDate, { color: colors[theme].text2 }]}>{item.date}</Text>
               </View>
               <View style={{ alignItems: "flex-end", width: 70 }}>
                 <Text
@@ -51,10 +69,21 @@ export const TransactionsCard = () => {
                 >
                   {item.amount}
                 </Text>
-                <Text style={$transactionCoin}>{item.currency}</Text>
+                <Text style={[$transactionCoin, { color: colors[theme].text2 }]}>
+                  {item.currency}
+                </Text>
               </View>
             </View>
-            <View style={item.id !== transactionsData.length && $separator}></View>
+            <View
+              style={
+                item.id !== transactionsData.length && [
+                  $separator,
+                  {
+                    borderBottomColor: colors[theme].separator,
+                  },
+                ]
+              }
+            ></View>
           </View>
         )}
       />
@@ -63,20 +92,17 @@ export const TransactionsCard = () => {
 }
 const $separator: ViewStyle = {
   borderBottomWidth: 1,
-  borderBottomColor: colors.separator,
   marginLeft: 60,
   marginRight: 12,
 }
 
 const $currentCard: ViewStyle = {
-  backgroundColor: colors.cards,
   margin: 12,
   padding: 15,
   borderRadius: 15,
 }
 
 const $iconContainer: ViewStyle = {
-  backgroundColor: colors.background,
   height: 30,
   width: 30,
   borderRadius: 15,
@@ -97,7 +123,6 @@ const $transactionMenuIcon: ImageStyle = {
 }
 
 const $transactionsTitle: TextStyle = {
-  color: colors.text,
   fontSize: 17,
   fontFamily: "monBold",
   paddingBottom: 8,
@@ -106,23 +131,19 @@ const $transactionsTitle: TextStyle = {
 }
 
 const $transactionDescription: TextStyle = {
-  color: colors.text,
   fontSize: 12,
   fontFamily: "monBold",
 }
 
 const $transactionDate: TextStyle = {
-  color: colors.text2,
   fontSize: 11,
   fontFamily: "monSbold",
   marginTop: -10,
 }
 
 const $transactionCoin: TextStyle = {
-  color: colors.text2,
   fontSize: 11,
   fontFamily: "monBold",
-
   marginTop: -10,
 }
 
@@ -142,5 +163,4 @@ const $transactionIcon: ImageStyle = {
   width: 15,
   height: 15,
   marginTop: 7.5,
-  backgroundColor: colors.icons,
 }
