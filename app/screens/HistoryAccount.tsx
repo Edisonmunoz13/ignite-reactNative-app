@@ -1,28 +1,24 @@
 import { observer } from "mobx-react-lite"
-import React, { FC, useState } from "react"
-import {
-  Image,
-  ImageStyle,
-  TextStyle,
-  View,
-  ViewStyle,
-  FlatList,
-  TouchableOpacity,
-  useColorScheme,
-} from "react-native"
+import React, { FC, useEffect, useState } from "react"
+import { View, ViewStyle, useColorScheme, TouchableOpacity } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { Headline } from "../components/Headline"
 import { NavigationBar } from "../components/NavigationBar"
 import { SliderAccounts } from "../components/SliderAccounts"
 import { TransactionsCard } from "../components/TransactionsCard"
-import { colors, spacing } from "../theme"
+import { colors } from "../theme"
 
-export const LigthScreen = ({ onPress }) => {
+export const HistoryAccount = () => {
   const theme = useColorScheme()
+
+  useEffect(() => {
+    console.log(theme)
+  }, [theme])
+
   return (
     <View style={[$container, { backgroundColor: colors[theme].background }]}>
       <ScrollView>
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity>
           <Headline />
         </TouchableOpacity>
         <View>

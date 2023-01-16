@@ -24,7 +24,7 @@ export const TransactionsCard = () => {
           style={[$transactionsTitle, { color: colors[theme].text }]}
           tx="welcomeScreen.transactionTitle"
         ></Text>
-        <View style={[$iconContainer, { backgroundColor: colors[theme].background }]}>
+        <View style={[$iconContainer, { backgroundColor: colors[theme].transactionIcon }]}>
           <Image
             style={$transactionMenuIcon}
             source={require("../../assets/images/transactionsMenuIcon.png")}
@@ -57,7 +57,7 @@ export const TransactionsCard = () => {
                 <Text style={[$transactionDescription, { color: colors[theme].text }]}>
                   {item.title}
                 </Text>
-                <Text style={[$transactionDate, { color: colors[theme].text2 }]}>{item.date}</Text>
+                <Text style={[$transactionDate, { color: colors[theme].date }]}>{item.date}</Text>
               </View>
               <View style={{ alignItems: "flex-end", width: 70 }}>
                 <Text
@@ -69,7 +69,7 @@ export const TransactionsCard = () => {
                 >
                   {item.amount}
                 </Text>
-                <Text style={[$transactionCoin, { color: colors[theme].text2 }]}>
+                <Text style={[$transactionCoin, { color: colors[theme].date }]}>
                   {item.currency}
                 </Text>
               </View>
@@ -160,7 +160,9 @@ const $transactioItem: ViewStyle = {
 }
 
 const $transactionIcon: ImageStyle = {
-  width: 15,
+  width: 12,
   height: 15,
-  marginTop: 7.5,
+  marginTop: 8,
+  paddingLeft: 2,
+  paddingRight: 2,
 }

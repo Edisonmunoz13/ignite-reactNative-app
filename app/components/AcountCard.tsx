@@ -27,7 +27,10 @@ export const AccountCard = () => {
             tx="welcomeScreen.CurrentAccount"
             style={[$current, { color: colors[theme].text }]}
           ></Text>
-          <Text style={[$account, { color: colors[theme].text }]} tx="welcomeScreen.account"></Text>
+          <Text
+            style={[$account, { color: colors[theme].text2 }]}
+            tx="welcomeScreen.account"
+          ></Text>
         </View>
         <View
           style={[$menuButtonContainer, { backgroundColor: colors[theme].icons, borderRadius: 20 }]}
@@ -41,7 +44,7 @@ export const AccountCard = () => {
             <View
               style={{
                 width: 45,
-                backgroundColor: item.backgroundColor,
+                backgroundColor: colors[theme].cards,
                 height: 25,
                 borderRadius: 8,
                 paddingLeft: 10,
@@ -50,7 +53,7 @@ export const AccountCard = () => {
                 marginRight: 2,
               }}
             >
-              <Text style={{ color: item.color, fontFamily: "monBold", fontSize: 12 }}>
+              <Text style={{ color: colors[theme].text2, fontFamily: "monBold", fontSize: 12 }}>
                 {item.name}
               </Text>
             </View>

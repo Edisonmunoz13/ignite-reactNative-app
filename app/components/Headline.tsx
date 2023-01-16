@@ -20,11 +20,11 @@ export const Headline = () => {
       <View style={$emptySpace}></View>
 
       <Text
-        style={[$headline, { color: colors[theme].white }]}
+        style={[$headline, { color: colors[theme].title }]}
         tx="welcomeScreen.headline"
         preset="subheading"
       ></Text>
-      <TouchableOpacity onPress={() => console.log("Button pressed!")}>
+      <TouchableOpacity>
         <Image style={$configButton} source={require("../../assets/images/config.png")} />
       </TouchableOpacity>
     </View>
