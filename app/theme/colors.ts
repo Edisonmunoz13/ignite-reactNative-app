@@ -38,29 +38,9 @@ const palette = {
 } as const
 
 export const colors = {
-  /**
-   * The palette is available to use, but prefer using the name.
-   * This is only included for rare, one-off cases. Try to use
-   * semantic names as much as possible.
-   */
-  palette,
-  /**
-   * A helper for making something see-thru.
-   */
-  transparent: "rgba(0, 0, 0, 0)",
-  /**
-   * The default text color in many components.
-   */
-
-  /**
-   * Secondary text information.
-   */
-  textDim: palette.neutral600,
-  /**
-   * The default color of the screen background.
-   */
-
   light: {
+    title: "#fff",
+
     background: "#523CF8",
 
     cards: "#FEFEFE",
@@ -71,25 +51,35 @@ export const colors = {
 
     text: "#16110D",
 
-    text2: "#C4C4C4",
+    date: "#C4C4C4",
+
+    text2: "#16110D",
 
     separator: "#DCDCDC",
+
+    transactionIcon: "#523CF8",
   },
 
   dark: {
+    title: "#fff",
+
     background: "#16110D",
 
     cards: "#2F2E33",
 
-    icons: "#EE4F31",
+    icons: "#F76654",
 
     white: "#2F2E33",
 
     text: "#FEFEFE",
 
+    date: "#646464",
+
     text2: "#646464",
 
     separator: "#646464",
+
+    transactionIcon: "#523CF8",
   },
 
   /**
@@ -113,4 +103,26 @@ export const colors = {
    *
    */
   errorBackground: palette.angry100,
+
+  /**
+   * The palette is available to use, but prefer using the name.
+   * This is only included for rare, one-off cases. Try to use
+   * semantic names as much as possible.
+   */
+  palette,
+  /**
+   * A helper for making something see-thru.
+   */
+  transparent: "rgba(0, 0, 0, 0)",
+  /**
+   * The default text color in many components.
+   */
+
+  /**
+   * Secondary text information.
+   */
+  textDim: palette.neutral600,
+  /**
+   * The default color of the screen background.
+   */
 }
