@@ -1,4 +1,5 @@
-import React, { FC } from "react"
+import { boolean, string } from "mobx-state-tree/dist/internal"
+import React, { FC, useState } from "react"
 import {
   Image,
   ImageStyle,
@@ -7,18 +8,22 @@ import {
   ViewStyle,
   FlatList,
   useColorScheme,
+  TouchableOpacity,
 } from "react-native"
 import { Text } from "../components"
 import { colors } from "../theme"
 
-const coins = [
-  { name: "EUR", backgroundColor: "#523CF8", color: "#fff" },
-  { name: "USD", backgroundColor: "#fff", color: "#16110D" },
-  { name: "GBP", backgroundColor: "#fff", color: "#16110D" },
+let coins = [
+  { name: "EUR", active: false },
+  { name: "USD", active: false },
+  { name: "GBP", active: false },
 ]
 
 export const AccountCard = () => {
+  const [isActive, setIsActive] = useState(false)
+
   const theme = useColorScheme()
+
   return (
     <View style={[$currentCard, { backgroundColor: colors[theme].cards }]}>
       <View style={$currentAccountHeader}>
@@ -41,22 +46,35 @@ export const AccountCard = () => {
       <View style={{ flexDirection: "row" }}>
         <View style={{ flexDirection: "row" }}>
           {coins.map((item) => (
-            <View
-              style={{
-                width: 45,
-                backgroundColor: colors[theme].cards,
-                height: 25,
-                borderRadius: 8,
-                paddingLeft: 10,
-                paddingRight: 8,
-                marginBottom: 4,
-                marginRight: 2,
+            <TouchableOpacity
+              onPress={() => {
+                setIsActive(!isActive)
               }}
             >
-              <Text style={{ color: colors[theme].text2, fontFamily: "monBold", fontSize: 12 }}>
-                {item.name}
-              </Text>
-            </View>
+              <View
+                style={{
+                  width: 45,
+                  backgroundColor: isActive ? colors[theme].transactionIcon : colors[theme].cards,
+                  height: 25,
+                  borderRadius: 8,
+                  paddingLeft: 10,
+                  paddingRight: 8,
+                  marginBottom: 4,
+                  marginRight: 2,
+                }}
+              >
+                <Text
+                  style={{
+                    color: isActive ? colors[theme].cards : colors[theme].text2,
+
+                    fontFamily: "monBold",
+                    fontSize: 12,
+                  }}
+                >
+                  {item.name}
+                </Text>
+              </View>
+            </TouchableOpacity>
           ))}
         </View>
       </View>

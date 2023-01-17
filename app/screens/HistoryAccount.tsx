@@ -1,6 +1,5 @@
-import { observer } from "mobx-react-lite"
-import React, { FC, useEffect, useState } from "react"
-import { View, ViewStyle, useColorScheme, TouchableOpacity } from "react-native"
+import React, { useEffect } from "react"
+import { View, ViewStyle, useColorScheme } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { Headline } from "../components/Headline"
 import { NavigationBar } from "../components/NavigationBar"
@@ -18,12 +17,8 @@ export const HistoryAccount = () => {
   return (
     <View style={[$container, { backgroundColor: colors[theme].background }]}>
       <ScrollView>
-        <TouchableOpacity>
-          <Headline />
-        </TouchableOpacity>
-        <View>
-          <SliderAccounts />
-        </View>
+        <Headline />
+        <SliderAccounts />
         <View style={$transactionsContainer}>
           <TransactionsCard />
         </View>
