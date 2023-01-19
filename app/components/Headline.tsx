@@ -10,7 +10,7 @@ import {
   useColorScheme,
 } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
-import { Text } from "../components"
+import { Text } from "."
 import { colors, spacing } from "../theme"
 
 export const Headline = () => {

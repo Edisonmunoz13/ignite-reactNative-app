@@ -10,7 +10,7 @@ import {
   useColorScheme,
   TouchableOpacity,
 } from "react-native"
-import { Text } from "../components"
+import { Text } from "."
 import { colors } from "../theme"
 
 let coins = [
