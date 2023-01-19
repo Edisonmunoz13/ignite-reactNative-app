@@ -15,6 +15,16 @@ const en = {
     account: "1234-4567-3456-3456",
     transactionTitle: "Recent transactions",
   },
+  dashboardScreen: {
+    headline: "Dashboard",
+  },
+  cardsScreen: {
+    headline: "Cards",
+  },
+
+  paymentsScreen: {
+    headline: "Payments",
+  },
   errorScreen: {
     title: "Something went wrong!",
     friendlySubtitle:
