@@ -13,14 +13,10 @@ import {
 import { Text } from "."
 import { colors } from "../theme"
 
-let coins = [
-  { name: "EUR", active: false },
-  { name: "USD", active: false },
-  { name: "GBP", active: false },
-]
+let coins = [{ name: "EUR" }, { name: "USD" }, { name: "GBP" }]
 
 export const AccountCard = () => {
-  const [isActive, setIsActive] = useState(false)
+  const [currentIndex, setcurrentIndex] = useState(0)
 
   const theme = useColorScheme()
 
@@ -45,16 +41,17 @@ export const AccountCard = () => {
       </View>
       <View style={{ flexDirection: "row" }}>
         <View style={{ flexDirection: "row" }}>
-          {coins.map((item) => (
+          {coins.map((item, index) => (
             <TouchableOpacity
               onPress={() => {
-                setIsActive(!isActive)
+                setcurrentIndex(index)
               }}
             >
               <View
                 style={{
                   width: 45,
-                  backgroundColor: isActive ? colors[theme].transactionIcon : colors[theme].cards,
+                  backgroundColor:
+                    index === currentIndex ? colors[theme].transactionIcon : colors[theme].cards,
                   height: 25,
                   borderRadius: 8,
                   paddingLeft: 10,
@@ -65,7 +62,7 @@ export const AccountCard = () => {
               >
                 <Text
                   style={{
-                    color: isActive ? colors[theme].cards : colors[theme].text2,
+                    color: index === currentIndex ? colors[theme].cards : colors[theme].text2,
 
                     fontFamily: "monBold",
                     fontSize: 12,

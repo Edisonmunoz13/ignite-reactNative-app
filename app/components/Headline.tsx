@@ -1,29 +1,12 @@
-import { observer } from "mobx-react-lite"
-import React, { FC, useState } from "react"
-import {
-  Image,
-  ImageStyle,
-  TextStyle,
-  View,
-  ViewStyle,
-  FlatList,
-  useColorScheme,
-} from "react-native"
+import React, { Children } from "react"
+import { Image, ImageStyle, TextStyle, View, ViewStyle, Text } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
-import { Text } from "."
-import { colors, spacing } from "../theme"
 
-export const Headline = () => {
-  const theme = useColorScheme()
+export const Headline = ({ children }) => {
   return (
     <View style={$topContainer}>
       <View style={$emptySpace}></View>
-
-      <Text
-        style={[$headline, { color: colors[theme].title }]}
-        tx="welcomeScreen.headline"
-        preset="subheading"
-      ></Text>
+      {children}
       <TouchableOpacity>
         <Image style={$configButton} source={require("../../assets/images/config.png")} />
       </TouchableOpacity>

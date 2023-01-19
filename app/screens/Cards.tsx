@@ -1,14 +1,12 @@
 import React, { useEffect } from "react"
 import { View, ViewStyle, useColorScheme } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
-import { Headline } from "../components/Headline"
-import { HistoryAccountHeadline } from "../components/HistoryAccountHeadline"
 import { NavigationBar } from "../components/NavigationBar"
-import { SliderAccounts } from "../components/SliderAccounts"
-import { TransactionsCard } from "../components/TransactionsCard"
 import { colors } from "../theme"
+import { CardsHeadline } from "../components/CardsHeadline"
+import { Headline } from "../components/Headline"
 
-export const HistoryAccount = () => {
+export const Cards = () => {
   const theme = useColorScheme()
 
   useEffect(() => {
@@ -19,12 +17,8 @@ export const HistoryAccount = () => {
     <View style={[$container, { backgroundColor: colors[theme].background }]}>
       <ScrollView>
         <Headline>
-          <HistoryAccountHeadline />
+          <CardsHeadline />
         </Headline>
-        <SliderAccounts />
-        <View style={$transactionsContainer}>
-          <TransactionsCard />
-        </View>
       </ScrollView>
       <NavigationBar />
     </View>
@@ -33,8 +27,4 @@ export const HistoryAccount = () => {
 
 const $container: ViewStyle = {
   flex: 1,
-}
-
-const $transactionsContainer: ViewStyle = {
-  marginTop: -12,
 }
