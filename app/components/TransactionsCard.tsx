@@ -27,7 +27,7 @@ export const TransactionsCard = () => {
         <View style={[$iconContainer, { backgroundColor: colors[theme].transactionIcon }]}>
           <Image
             style={$transactionMenuIcon}
-            source={require("../assets/images/transactionsMenuIcon.png")}
+            source={require("../../assets/images/transactionsMenuIcon.png")}
           />
         </View>
       </View>
