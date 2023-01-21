@@ -6,7 +6,6 @@ import {
   TextStyle,
   View,
   ViewStyle,
-  FlatList,
   useColorScheme,
   TouchableOpacity,
 } from "react-native"
