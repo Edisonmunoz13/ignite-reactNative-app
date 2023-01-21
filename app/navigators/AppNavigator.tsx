@@ -11,7 +11,7 @@ import { observer } from "mobx-react-lite"
 import React from "react"
 import { useColorScheme } from "react-native"
 import Config from "../config"
-import { WelcomeScreen } from "../screens"
+import { Dashboard, WelcomeScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 
 /**
@@ -29,6 +29,7 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
  */
 export type AppStackParamList = {
   Welcome: undefined
+  Dashboard: undefined
   // 🔥 Your screens go here
 }
 
@@ -50,6 +51,8 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      <Stack.Screen name="Dashboard" component={Dashboard} />
+
       {/** 🔥 Your screens go here */}
     </Stack.Navigator>
   )

@@ -1,6 +1,8 @@
 import React, { FC } from "react"
 import { Image, ImageStyle, View, ViewStyle, useColorScheme, TouchableOpacity } from "react-native"
+import { navigationRef } from "../navigators"
 import { colors } from "../theme"
+import { AppStackParamList } from "../navigators"
 
 const buttons = [
   { name: "dashboard", icon: require("../../assets/images/button1.png") },
@@ -9,15 +11,16 @@ const buttons = [
   { name: "payments", icon: require("../../assets/images/button4.png") },
 ]
 
-export const NavigationBar = () => {
+export const NavigationBar = ({ goDashboard }) => {
   const theme = useColorScheme()
+
   return (
     <>
       <View
         style={[$navigationContainer, { backgroundColor: colors[theme].white, borderRadius: 30 }]}
       >
-        {buttons.map((item) => (
-          <TouchableOpacity>
+        {buttons.map((item, index) => (
+          <TouchableOpacity onPress={goDashboard}>
             <Image style={$buttonIcons} source={item.icon} />
           </TouchableOpacity>
         ))}

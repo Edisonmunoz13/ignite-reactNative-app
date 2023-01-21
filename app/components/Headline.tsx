@@ -1,4 +1,4 @@
-import React, { Children } from "react"
+import React from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, Text } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 
@@ -22,11 +22,6 @@ const $topContainer: ViewStyle = {
 
 const $emptySpace: ViewStyle = {
   width: 36,
-}
-
-const $headline: TextStyle = {
-  marginTop: 45,
-  marginBottom: 40,
 }
 
 const $configButton: ImageStyle = {

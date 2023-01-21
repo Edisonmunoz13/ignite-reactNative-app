@@ -4,7 +4,18 @@ import { Cards } from "./Cards"
 import { HistoryAccount } from "./HistoryAccount"
 import { Payments } from "./Payments"
 import { Dashboard } from "./Dashboard"
+import { NavigationBar } from "../components/NavigationBar"
+import { AppStackParamList } from "../navigators"
+import { StackScreenProps } from "@react-navigation/stack"
 
-export const WelcomeScreen: FC = observer(function WelcomeScreen() {
-  return <HistoryAccount />
-})
+export const WelcomeScreen: FC<StackScreenProps<AppStackParamList, "Welcome">> = observer(
+  ({ navigation }) => {
+    const nextScreen = () => navigation.navigate("Dashboard")
+    return (
+      <>
+        <HistoryAccount />
+        <NavigationBar goDashboard={nextScreen} />
+      </>
+    )
+  },
+)

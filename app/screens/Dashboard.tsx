@@ -20,7 +20,6 @@ export const Dashboard = () => {
           <DashboardHeadline />
         </Headline>
       </ScrollView>
-      <NavigationBar />
     </View>
   )
 }

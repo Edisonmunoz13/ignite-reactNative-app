@@ -26,7 +26,6 @@ export const HistoryAccount = () => {
           <TransactionsCard />
         </View>
       </ScrollView>
-      <NavigationBar />
     </View>
   )
 }
