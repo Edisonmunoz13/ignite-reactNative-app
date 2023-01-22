@@ -11,7 +11,7 @@ import { observer } from "mobx-react-lite"
 import React from "react"
 import { useColorScheme } from "react-native"
 import Config from "../config"
-import { Dashboard, WelcomeScreen } from "../screens"
+import { Dashboard, WelcomeScreen, HistoryAccount, Payments, Cards } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 
 /**
@@ -30,6 +30,10 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 export type AppStackParamList = {
   Welcome: undefined
   Dashboard: undefined
+  Cards: undefined
+  HistoryAccount: undefined
+  Payments: undefined
+
   // 🔥 Your screens go here
 }
 
@@ -52,6 +56,9 @@ const AppStack = observer(function AppStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
+      <Stack.Screen name="Cards" component={Cards} />
+      <Stack.Screen name="HistoryAccount" component={HistoryAccount} />
+      <Stack.Screen name="Payments" component={Payments} />
 
       {/** 🔥 Your screens go here */}
     </Stack.Navigator>

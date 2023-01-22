@@ -1,17 +1,22 @@
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
 import { Image, ImageStyle, View, ViewStyle, useColorScheme, TouchableOpacity } from "react-native"
 import { navigationRef } from "../navigators"
 import { colors } from "../theme"
 import { AppStackParamList } from "../navigators"
 
-const buttons = [
-  { name: "dashboard", icon: require("../../assets/images/button1.png") },
-  { name: "cards", icon: require("../../assets/images/button2.png") },
-  { name: "account history", icon: require("../../assets/images/button3.png") },
-  { name: "payments", icon: require("../../assets/images/button4.png") },
+type navButton = {
+  name: string
+  icon: any
+}
+
+const buttons: navButton[] = [
+  { name: "Dashboard", icon: require("../../assets/images/button1.png") },
+  { name: "Cards", icon: require("../../assets/images/button2.png") },
+  { name: "HistoryAccount", icon: require("../../assets/images/button3.png") },
+  { name: "Payments", icon: require("../../assets/images/button4.png") },
 ]
 
-export const NavigationBar = ({ goDashboard }) => {
+export const NavigationBar = () => {
   const theme = useColorScheme()
 
   return (
@@ -20,7 +25,7 @@ export const NavigationBar = ({ goDashboard }) => {
         style={[$navigationContainer, { backgroundColor: colors[theme].white, borderRadius: 30 }]}
       >
         {buttons.map((item, index) => (
-          <TouchableOpacity onPress={goDashboard}>
+          <TouchableOpacity onPress={() => navigationRef.navigate(buttons[index].name)}>
             <Image style={$buttonIcons} source={item.icon} />
           </TouchableOpacity>
         ))}
