@@ -2,7 +2,7 @@ import { FlatList, View, Image, ViewStyle } from "react-native"
 import { AccountCard } from "./AcountCard"
 import React, { FC } from "react"
 
-const data = [
+const Accountdata = [
   {
     key: "1",
     text: "Item 1",
@@ -45,7 +45,7 @@ export const SliderAccounts = () => {
         showsHorizontalScrollIndicator={false}
         snapToInterval={366}
         horizontal={true}
-        data={data}
+        data={Accountdata}
         renderItem={({ item }) => <View>{item.component}</View>}
         keyExtractor={(item) => item.key}
       />
