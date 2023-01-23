@@ -1,8 +1,8 @@
-export default [
+export const data = [
   {
     id: 1,
     type: false,
-    icon: require(`../../assets/transactionsIcons/1.png`),
+    icon: require(`../../../assets/transactionsIcons/1.png`),
     title: "'Golub' Taxi Transportation",
     date: "20th May, 18:39",
     amount: "-345,00",
@@ -11,7 +11,7 @@ export default [
   {
     id: 2,
     type: false,
-    icon: require(`../../assets/transactionsIcons/2.png`),
+    icon: require(`../../../assets/transactionsIcons/2.png`),
     title: "'Francois' Restaurant Dinner",
     date: "15th May, 20:56",
     amount: "-1.158,00",
@@ -20,7 +20,7 @@ export default [
   {
     id: 3,
     type: false,
-    icon: require(`../../assets/transactionsIcons/3.png`),
+    icon: require(`../../../assets/transactionsIcons/3.png`),
     title: "'AirMax' Travel to Paris",
     date: "14th May, 16:00",
     amount: "-813,00",
@@ -29,7 +29,7 @@ export default [
   {
     id: 4,
     type: true,
-    icon: require(`../../assets/transactionsIcons/4.png`),
+    icon: require(`../../../assets/transactionsIcons/4.png`),
     title: "Construction Itd.",
     date: "11th May, 09:26",
     amount: "+24.500,00",
@@ -38,7 +38,7 @@ export default [
   {
     id: 5,
     type: true,
-    icon: require(`../../assets/transactionsIcons/5.png`),
+    icon: require(`../../../assets/transactionsIcons/5.png`),
     title: "Rober Smith",
     date: "03rd May, 12:06",
     amount: "+11.215,00",

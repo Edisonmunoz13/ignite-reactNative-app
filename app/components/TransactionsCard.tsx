@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, useEffect, useState } from "react"
 import {
   Image,
   ImageStyle,
@@ -10,12 +10,35 @@ import {
 } from "react-native"
 import { Text } from "../components"
 import { colors } from "../theme"
-import data from "../data/transactionsData"
+import axios from "axios"
+import { data } from "../services/api/Transactions"
 
-const transactionsData = data
+type transactionTypes = {
+  id: number
+  type: boolean
+  icon: unknown
+  title: string
+  date: string
+  amount: string | number
+  currency: string
+}[]
 
 export const TransactionsCard = () => {
   const theme = useColorScheme()
+
+  const [transactionsData, setTransactionsData] = useState<transactionTypes>(data)
+
+  useEffect(() => {
+    axios
+      .get("../services/api/Transactions.ts", { params: transactionsData })
+      .then((response) => {
+        console.log(response.data)
+        setTransactionsData(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [])
 
   return (
     <View style={[$currentCard, { backgroundColor: colors[theme].cards }]}>
