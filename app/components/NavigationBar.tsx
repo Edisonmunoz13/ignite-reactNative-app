@@ -5,8 +5,8 @@ import { colors } from "../theme"
 import { AppStackParamList } from "../navigators"
 
 type navButton = {
-  name: string
-  icon: any
+  name: keyof AppStackParamList
+  icon: unknown
 }
 
 const buttons: navButton[] = [

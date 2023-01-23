@@ -1,13 +1,17 @@
+import { StackRouter } from "@react-navigation/native"
 import React from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, Text } from "react-native"
+import { Image, ImageStyle, TextStyle, View, ViewStyle, Text, Settings } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
+import { AppStackParamList, navigationRef } from "../navigators"
+
+const settingsLocation: keyof AppStackParamList = "Settings"
 
 export const Headline = ({ children }) => {
   return (
     <View style={$topContainer}>
       <View style={$emptySpace}></View>
       {children}
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigationRef.navigate(settingsLocation)}>
         <Image style={$configButton} source={require("../../assets/images/config.png")} />
       </TouchableOpacity>
     </View>

@@ -9,9 +9,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { StackScreenProps } from "@react-navigation/stack"
 import { observer } from "mobx-react-lite"
 import React from "react"
-import { useColorScheme } from "react-native"
+import { Settings, useColorScheme } from "react-native"
 import Config from "../config"
-import { Dashboard, WelcomeScreen, HistoryAccount, Payments, Cards } from "../screens"
+import { Dashboard, WelcomeScreen, HistoryAccount, Payments, Cards, SettingsMenu } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 
 /**
@@ -33,6 +33,7 @@ export type AppStackParamList = {
   Cards: undefined
   HistoryAccount: undefined
   Payments: undefined
+  Settings: undefined
 
   // 🔥 Your screens go here
 }
@@ -59,6 +60,7 @@ const AppStack = observer(function AppStack() {
       <Stack.Screen name="Cards" component={Cards} />
       <Stack.Screen name="HistoryAccount" component={HistoryAccount} />
       <Stack.Screen name="Payments" component={Payments} />
+      <Stack.Screen name="Settings" component={SettingsMenu} />
 
       {/** 🔥 Your screens go here */}
     </Stack.Navigator>

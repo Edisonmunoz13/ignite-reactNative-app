@@ -12,7 +12,11 @@ import {
 import { Text } from "."
 import { colors } from "../theme"
 
-let coins = [{ name: "EUR" }, { name: "USD" }, { name: "GBP" }]
+type Coins = {
+  name: "EUR" | "USD" | "GBP"
+}
+
+const coins: Coins[] = [{ name: "EUR" }, { name: "USD" }, { name: "GBP" }]
 
 export const AccountCard = () => {
   const [currentIndex, setcurrentIndex] = useState(0)
