@@ -25,6 +25,9 @@ const en = {
   paymentsScreen: {
     headline: "Payments",
   },
+  settingScreen: {
+    headline: "Settings",
+  },
   errorScreen: {
     title: "Something went wrong!",
     friendlySubtitle:
