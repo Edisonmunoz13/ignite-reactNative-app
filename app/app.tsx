@@ -22,6 +22,7 @@ import * as storage from "./utils/storage"
 import { customFontsToLoad } from "./theme"
 import { setupReactotron } from "./services/reactotron"
 import Config from "./config"
+import { NavigationBar } from "./components/NavigationBar"
 
 // Set up Reactotron, which is a free desktop app for inspecting and debugging
 // React Native apps. Learn more here: https://github.com/infinitered/reactotron
@@ -99,6 +100,7 @@ function App(props: AppProps) {
           onStateChange={onNavigationStateChange}
         />
       </ErrorBoundary>
+      <NavigationBar />
     </SafeAreaProvider>
   )
 }

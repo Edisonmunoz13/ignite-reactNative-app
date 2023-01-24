@@ -10,7 +10,7 @@ export const Payments = () => {
   const theme = useColorScheme()
 
   useEffect(() => {
-    console.log(theme)
+    //console.log(theme)
   }, [theme])
 
   return (
@@ -20,7 +20,6 @@ export const Payments = () => {
           <PaymentsHeadline />
         </Headline>
       </ScrollView>
-      <NavigationBar />
     </View>
   )
 }

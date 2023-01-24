@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react"
+import React, { FC, useState, useEffect } from "react"
 import { Image, ImageStyle, View, ViewStyle, useColorScheme, TouchableOpacity } from "react-native"
 import { navigationRef } from "../navigators"
 import { colors } from "../theme"
@@ -7,17 +7,41 @@ import { AppStackParamList } from "../navigators"
 type navButton = {
   name: keyof AppStackParamList
   icon: unknown
+  activeIcon: unknown
 }
 
 const buttons: navButton[] = [
-  { name: "Dashboard", icon: require("../../assets/images/button1.png") },
-  { name: "Cards", icon: require("../../assets/images/button2.png") },
-  { name: "HistoryAccount", icon: require("../../assets/images/button3.png") },
-  { name: "Payments", icon: require("../../assets/images/button4.png") },
+  {
+    name: "Dashboard",
+    icon: require("../../assets/images/button1.png"),
+    activeIcon: require("../../assets/images/button5.png"),
+  },
+  {
+    name: "Cards",
+    icon: require("../../assets/images/button2.png"),
+    activeIcon: require("../../assets/images/button6.png"),
+  },
+  {
+    name: "HistoryAccount",
+    icon: require("../../assets/images/button7.png"),
+    activeIcon: require("../../assets/images/button3.png"),
+  },
+  {
+    name: "Payments",
+    icon: require("../../assets/images/button4.png"),
+    activeIcon: require("../../assets/images/button8.png"),
+  },
 ]
 
 export const NavigationBar = () => {
   const theme = useColorScheme()
+  const [screenIsActive, setscreenIsActive] = useState<keyof AppStackParamList>(null)
+
+  const changeScreen = (index) => {
+    setscreenIsActive(buttons[index].name)
+    navigationRef.navigate(buttons[index].name)
+    console.log(`change to ${buttons[index].name}`)
+  }
 
   return (
     <>
@@ -25,8 +49,11 @@ export const NavigationBar = () => {
         style={[$navigationContainer, { backgroundColor: colors[theme].white, borderRadius: 30 }]}
       >
         {buttons.map((item, index) => (
-          <TouchableOpacity onPress={() => navigationRef.navigate(buttons[index].name)}>
-            <Image style={$buttonIcons} source={item.icon} />
+          <TouchableOpacity onPress={() => changeScreen(index)}>
+            <Image
+              style={$buttonIcons}
+              source={screenIsActive === item.name ? item.activeIcon : item.icon}
+            />
           </TouchableOpacity>
         ))}
       </View>
