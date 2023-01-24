@@ -5,12 +5,13 @@ import { NavigationBar } from "../components/NavigationBar"
 import { colors } from "../theme"
 import { CardsHeadline } from "../components/CardsHeadline"
 import { Headline } from "../components/Headline"
+import { SafeAreaView } from "react-native-safe-area-context"
 
 export const Cards = () => {
   const theme = useColorScheme()
 
   useEffect(() => {
-    console.log(theme)
+    //console.log(theme)
   }, [theme])
 
   return (
@@ -20,7 +21,6 @@ export const Cards = () => {
           <CardsHeadline />
         </Headline>
       </ScrollView>
-      <NavigationBar />
     </View>
   )
 }

@@ -12,7 +12,7 @@ export const HistoryAccount = () => {
   const theme = useColorScheme()
 
   useEffect(() => {
-    console.log(theme)
+    //console.log(theme)
   }, [theme])
 
   return (
@@ -26,7 +26,6 @@ export const HistoryAccount = () => {
           <TransactionsCard />
         </View>
       </ScrollView>
-      <NavigationBar />
     </View>
   )
 }

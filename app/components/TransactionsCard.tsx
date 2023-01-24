@@ -28,17 +28,15 @@ export const TransactionsCard = () => {
 
   const [transactionsData, setTransactionsData] = useState<transactionTypes>(data)
 
-  useEffect(() => {
-    axios
-      .get("../services/api/Transactions.ts", { params: transactionsData })
-      .then((response) => {
-        console.log(response.data)
-        setTransactionsData(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }, [])
+  axios
+    .get("../services/api/Transactions.ts", { params: transactionsData })
+    .then((response) => {
+      console.log(response.data)
+      setTransactionsData(response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 
   return (
     <View style={[$currentCard, { backgroundColor: colors[theme].cards }]}>
@@ -182,8 +180,8 @@ const $transactioItem: ViewStyle = {
 }
 
 const $transactionIcon: ImageStyle = {
-  width: 12,
-  height: 15,
+  width: 14,
+  height: 13,
   marginTop: 8,
   paddingLeft: 2,
   paddingRight: 2,
