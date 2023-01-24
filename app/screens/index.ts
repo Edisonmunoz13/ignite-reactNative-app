@@ -5,4 +5,5 @@ export * from "./HistoryAccount"
 export * from "./Cards"
 export * from "./Payments"
 export * from "./SettingsMenu"
+export * from "./TransactionsDetails"
 // export other screens here

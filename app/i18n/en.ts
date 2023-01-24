@@ -28,6 +28,10 @@ const en = {
   settingScreen: {
     headline: "Settings",
   },
+  Details: {
+    headline: "Transactions Details",
+  },
+
   errorScreen: {
     title: "Something went wrong!",
     friendlySubtitle:
