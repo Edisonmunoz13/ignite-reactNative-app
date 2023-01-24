@@ -7,6 +7,8 @@ import { NavigationBar } from "../components/NavigationBar"
 import { SliderAccounts } from "../components/SliderAccounts"
 import { TransactionsCard } from "../components/TransactionsCard"
 import { colors } from "../theme"
+import { AppStackParamList } from "../navigators"
+import { navigationRef } from "../navigators"
 
 export const HistoryAccount = () => {
   const theme = useColorScheme()
