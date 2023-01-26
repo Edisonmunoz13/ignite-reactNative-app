@@ -12,7 +12,7 @@ import { Text } from "../components"
 import { colors } from "../theme"
 import axios from "axios"
 import { data } from "../services/api/Transactions"
-import { TouchableOpacity } from "react-native-gesture-handler"
+import { TouchableOpacity } from "react-native"
 import { navigationRef } from "../navigators"
 import { AppStackParamList } from "../navigators"
 
@@ -31,23 +31,21 @@ export const TransactionsCard = () => {
 
   const [transactionsData, setTransactionsData] = useState<transactionTypes>(data)
 
-  useEffect(() => {
-    axios
-      .get("../services/api/Transactions.ts", { params: transactionsData })
-      .then((response) => {
-        console.log(response.data)
-        setTransactionsData(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }, [])
+  axios
+    .get("../services/api/Transactions.ts", { params: transactionsData })
+    .then((response) => {
+      console.log(response.data)
+      setTransactionsData(response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 
   const details: keyof AppStackParamList = "TransactionDetails"
 
   const goToDetails = () => {
-    navigationRef.navigate<keyof AppStackParamList>(details)
     console.log("change to TransactionDetails")
+    navigationRef.navigate<keyof AppStackParamList>(details)
   }
 
   return (
