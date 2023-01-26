@@ -1,7 +1,7 @@
 import { StackRouter, useNavigation } from "@react-navigation/native"
 import React from "react"
 import { Image, ImageStyle, TextStyle, View, ViewStyle, Text, Settings } from "react-native"
-import { TouchableOpacity } from "react-native-gesture-handler"
+import { TouchableOpacity } from "react-native"
 import { AppStackParamList, navigationRef } from "../navigators"
 
 const settingsLocation: keyof AppStackParamList = "Settings"
